@@ -23,7 +23,7 @@ const Search = (props) => {
 		}
 	}, [loading]);
 	return (
-		<div className="search">
+		<div className="item searchBox">
 			<input
 				type="text"
 				placeholder="Enter city name"
@@ -33,14 +33,10 @@ const Search = (props) => {
 				}}
 			/>
 
-			<button
-				type="submit"
-				onClick={() => {
-					setLoading(true);
-				}}
-			>
-				<i class="fa fa-search"></i>
-			</button>
+			<i
+				className="fa fa-search searchButton"
+				onClick={() => setLoading(true)}
+			/>
 		</div>
 	);
 };
