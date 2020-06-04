@@ -1,20 +1,86 @@
-.search {
-	margin-left: 35px;
-	min-width: 100%;
+.searchBar {
+	width: 100%;
+	margin: 10px 3px 0px;
+	border: 1px solid grey;
+	border-radius: 20px;
 }
 
 input[type="text"] {
+	width: 70%;
+	margin: 6px 6px 6px 6px;
+	padding: 10px;
 	font-size: 17px;
-	min-width: 70%;
+	border: none;
+	outline: none;
+	background-color: gr/ey;
 }
 
-button {
-	background: #ddd;
-	min-width: 10%;
-	font-size: 17px;
+.searchButton {
+	float: right;
+	width: 15%;
+	padding-top: 3%;
+	color: gray;
+	font-size: 27px;
 	cursor: pointer;
+	background-color: b/lue;
 }
 
-button:hover {
-	background: #ccc;
+@media only screen and (min-width: 600px) {
+	input[type="text"] {
+		width: 75%;
+		margin: 6px 6px 6px 6px;
+		padding: 10px;
+		font-size: 17px;
+		border: none;
+		outline: none;
+	}
+
+	.searchButton {
+		float: right;
+		width: 10%;
+		padding-top: 10px;
+		color: gray;
+		font-size: 27px;
+		cursor: pointer;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	input[type="text"] {
+		width: 85%;
+		margin: 6px 0px 6px 6px;
+		padding: 10px;
+		font-size: 17px;
+		border: none;
+		outline: none;
+	}
+
+	.searchButton {
+		float: right;
+		width: 7%;
+		margin-bottom: 10px;
+		color: gray;
+		font-size: 27px;
+		cursor: pointer;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	input[type="text"] {
+		width: 90%;
+		margin: 6px 0px 6px 6px;
+		padding: 10px;
+		font-size: 17px;
+		border: none;
+		outline: none;
+	}
+
+	.searchButton {
+		float: right;
+		width: 5%;
+		margin-bottom: 10px;
+		color: gray;
+		font-size: 27px;
+		cursor: pointer;
+	}
 }

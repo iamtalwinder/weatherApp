@@ -23,7 +23,7 @@ const Search = (props) => {
 		}
 	}, [loading]);
 	return (
-		<div className="item searchBox">
+		<div className="item searchBar">
 			<input
 				type="text"
 				placeholder="Enter city name"
