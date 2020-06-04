@@ -8,19 +8,23 @@ const Search = (props) => {
 	let { setData, setLoading, loading } = props;
 
 	useEffect(() => {
-		if (loading) {
-			axios
-				.get(
-					`http://api.openweathermap.org/data/2.5/weather?q=${text}&appid=52764d28783ae26fe0c6cf3f6b6ae6fc`
-				)
-				.then((response) => {
-					setData(response.data);
-				})
-				.catch((error) => {
-					setData(error);
-				});
-			setLoading(false);
-		}
+		const id = setInterval(() => {
+			if (loading) {
+				axios
+					.get(
+						`http://api.openweathermap.org/data/2.5/weather?q=${text}&appid=52764d28783ae26fe0c6cf3f6b6ae6fc`
+					)
+					.then((response) => {
+						console.log(response);
+						setData(response.data);
+					})
+					.catch((error) => {
+						setData(error);
+					});
+				setLoading(false);
+			}
+			clearInterval(id);
+		}, 3000);
 	}, [loading]);
 	return (
 		<div className="item searchBar">
