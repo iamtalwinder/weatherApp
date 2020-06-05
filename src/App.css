@@ -3,23 +3,72 @@
 	width: 90%;
 	flex-wrap: wrap;
 	align-items: baseline;
-	margin: 9% auto;
-	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-	transition: 0.3s;
+	margin: 5% auto;
 }
 
-.container:hover {
+.error {
+	font-family: Sans-serif;
+	font-size: medium;
+	color: red;
+	margin: 2% auto;
+}
+
+.data {
+	margin: auto;
+	width: 95%;
+	border-radius: 20px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.data:hover {
 	box-shadow: 0 40px 30px 0 rgba(0, 0, 0, 0.2);
+}
+
+.box1 {
+	width: 40%;
+}
+
+.box2 {
+	width: 40%;
+	padding-top: 4%;
+}
+
+.box3 {
+	width: 40%;
+}
+
+.box4 {
+	width: 40%;
+}
+
+.cityName {
+	font-size: x-large !important;
+	color: #878787 !important;
+}
+
+.extraInfo {
+	font-size: medium !important;
+	color: #878787 !important;
+}
+
+@media only screen and (min-width: 760px) {
+	.container {
+		width: 70%;
+	}
 }
 
 @media only screen and (min-width: 960px) {
 	.container {
-		display: flex;
 		width: 50%;
-		height: 40%;
-		flex-wrap: wrap;
-		margin: 9% auto;
-		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-		transition: 0.3s;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.container {
+		width: 30%;
 	}
 }

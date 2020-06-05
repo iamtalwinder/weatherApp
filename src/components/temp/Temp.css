@@ -1,0 +1,19 @@
+.temp {
+	font-size: 50px;
+	color: #878787 !important;
+	margin-left: 15%;
+	margin-top: -5%;
+}
+
+#celsius {
+	font-size: small;
+}
+
+#fahrenheit {
+	font-size: small;
+}
+
+.divider {
+	font-size: small;
+	color: #878787 !important;
+}

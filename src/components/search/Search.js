@@ -5,7 +5,7 @@ import "./Search.css";
 const Search = (props) => {
 	let [text, changeText] = useState("");
 
-	let { setData, setLoading, loading } = props;
+	let { data, setData, setLoading, loading } = props;
 
 	useEffect(() => {
 		const id = setInterval(() => {
@@ -14,17 +14,29 @@ const Search = (props) => {
 					.get(
 						`http://api.openweathermap.org/data/2.5/weather?q=${text}&appid=52764d28783ae26fe0c6cf3f6b6ae6fc`
 					)
-					.then((response) => {
-						console.log(response);
-						setData(response.data);
+					.then(({ data }) => {
+						console.log(data);
+						setData({
+							error: false,
+							data: true,
+							locationName: data.name,
+							mainWeather: data.weather[0].main,
+							pressure: data.main.pressure,
+							humidity: data.main.humidity,
+							temp: Math.round(((data.main.temp - 273.15) * 9) / 5 + 32),
+							tempUnit: "F",
+							wind: Math.round(data.wind.speed),
+							windUnit: "mph",
+							icon: data.weather[0].icon,
+						});
 					})
 					.catch((error) => {
-						setData(error);
+						setData({ error: true });
 					});
 				setLoading(false);
 			}
 			clearInterval(id);
-		}, 3000);
+		}, 1000);
 	}, [loading]);
 	return (
 		<div className="item searchBar">
